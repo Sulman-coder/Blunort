@@ -1,13 +1,1149 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Contact BLUNORT for international import, export, sourcing and commodity inquiries."><title>Contact Us | BLUNORT</title><link rel="stylesheet" href="style.css"></head>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Contact BLUNORT for international import, export, sourcing and commodity inquiries.">
+
+<title>Contact Us | BLUNORT</title>
+
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+
+:root{
+    --navy:#071a35;
+    --navy2:#0c2b50;
+    --ink:#102238;
+    --muted:#65758a;
+    --line:#dfe6ed;
+    --gold:#c7a66a;
+    --white:#fff;
+    --soft:#f5f8fb;
+    --max:1180px;
+}
+
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+body{
+    font-family:"DM Sans",sans-serif;
+    color:var(--ink);
+    background:#fff;
+    line-height:1.65;
+}
+
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.site-header{
+    position:fixed;
+    z-index:100;
+    top:0;
+    left:0;
+    width:100%;
+    height:82px;
+
+    padding:0 max(24px,calc((100% - var(--max))/2));
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    color:#fff;
+
+    background:rgba(7,26,53,.30);
+
+    backdrop-filter:blur(8px);
+
+    transition:.3s ease;
+}
+
+
+.site-header.scrolled{
+    background:rgba(7,26,53,.97);
+    box-shadow:0 8px 30px rgba(0,0,0,.18);
+}
+
+
+.brand{
+    display:flex;
+    gap:12px;
+    align-items:center;
+
+    font-family:Manrope;
+    font-weight:800;
+    letter-spacing:1.5px;
+    font-size:19px;
+}
+
+
+.brand small{
+    display:block;
+    font:500 8px "DM Sans";
+    letter-spacing:2px;
+    opacity:.7;
+    margin-top:-2px;
+}
+
+
+.brand-mark{
+    width:40px;
+    height:40px;
+
+    border:1px solid rgba(255,255,255,.35);
+
+    display:grid;
+    place-items:center;
+
+    color:var(--gold);
+
+    font-size:21px;
+}
+
+
+.nav{
+    display:flex;
+    gap:30px;
+
+    font-size:14px;
+    font-weight:600;
+}
+
+
+.nav a{
+    opacity:.78;
+    position:relative;
+    transition:.25s;
+}
+
+
+.nav a:hover,
+.nav a.active{
+    opacity:1;
+}
+
+
+.nav a.active:after{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:-10px;
+
+    height:2px;
+
+    background:var(--gold);
+}
+
+
+.menu-toggle{
+    display:none;
+
+    background:none;
+    border:0;
+
+    color:#fff;
+
+    font-size:27px;
+
+    cursor:pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.page-hero{
+
+    min-height:540px;
+
+    padding:
+        170px
+        max(24px,calc((100% - var(--max))/2))
+        100px;
+
+    display:flex;
+    align-items:center;
+
+    position:relative;
+    overflow:hidden;
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7,26,53,.96),
+            rgba(7,26,53,.72),
+            rgba(7,26,53,.40)
+        ),
+        url("/contact.jpg")
+        center/cover
+        no-repeat;
+}
+
+
+.page-hero-content{
+    position:relative;
+    z-index:2;
+    max-width:800px;
+}
+
+
+.eyebrow{
+    font-size:11px;
+
+    letter-spacing:3px;
+
+    font-weight:700;
+
+    color:var(--gold);
+
+    display:block;
+
+    margin-bottom:16px;
+}
+
+
+.page-hero h1{
+    font-family:Manrope;
+
+    font-size:clamp(50px,7vw,82px);
+
+    line-height:1.05;
+
+    letter-spacing:-3px;
+}
+
+
+.page-hero p{
+    max-width:650px;
+
+    color:#d5e1eb;
+
+    font-size:18px;
+
+    margin-top:25px;
+}
+
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.section{
+
+    max-width:var(--max);
+
+    margin:auto;
+
+    padding:105px 24px;
+}
+
+
+.contact-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        .8fr 1.2fr;
+
+    gap:90px;
+
+    align-items:start;
+}
+
+
+.contact-grid h2{
+
+    font-family:Manrope;
+
+    font-size:clamp(38px,4vw,55px);
+
+    line-height:1.08;
+
+    letter-spacing:-2px;
+}
+
+
+/* =========================
+   CONTACT DETAILS
+========================= */
+
+.contact-list{
+
+    margin-top:35px;
+}
+
+
+.contact-list div{
+
+    padding:20px 0;
+
+    border-bottom:1px solid var(--line);
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:4px;
+}
+
+
+.contact-list b{
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    color:var(--muted);
+}
+
+
+.contact-list a{
+
+    color:#15527c;
+
+    font-weight:600;
+
+    transition:.25s;
+}
+
+
+.contact-list a:hover{
+
+    color:var(--gold);
+}
+
+
+.contact-list span{
+
+    color:var(--ink);
+
+    font-weight:600;
+}
+
+
+.placeholder{
+
+    color:#8a96a3;
+
+    font-size:12px;
+
+    margin-top:25px;
+
+    line-height:1.6;
+}
+
+
+/* =========================
+   FORM CARD
+========================= */
+
+.contact-form{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+    padding:42px;
+
+    background:#fff;
+
+    border:1px solid var(--line);
+
+    box-shadow:
+        0 25px 70px rgba(16,34,56,.10);
+}
+
+
+.contact-form label{
+
+    font-size:12px;
+
+    font-weight:700;
+
+    color:#405267;
+}
+
+
+.contact-form input,
+.contact-form textarea{
+
+    width:100%;
+
+    margin-top:8px;
+
+    border:1px solid var(--line);
+
+    padding:15px 16px;
+
+    font:inherit;
+
+    color:var(--ink);
+
+    outline:none;
+
+    background:#fff;
+
+    transition:.25s;
+
+    border-radius:2px;
+}
+
+
+.contact-form input{
+
+    height:52px;
+}
+
+
+.contact-form textarea{
+
+    resize:vertical;
+
+    min-height:140px;
+}
+
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+
+    color:#9aa6b2;
+}
+
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+    border-color:#7898b1;
+
+    box-shadow:
+        0 0 0 3px rgba(120,152,177,.10);
+}
+
+
+/* MESSAGE + BUTTON */
+
+.contact-form label:nth-of-type(5),
+.contact-form label:nth-of-type(6),
+.contact-form button,
+.form-status{
+
+    grid-column:1 / -1;
+}
+
+
+.contact-form button{
+
+    border:0;
+
+    margin-top:5px;
+
+    min-height:52px;
+
+    font-family:"DM Sans",sans-serif;
+}
+
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:15px 24px;
+
+    border-radius:2px;
+
+    font-weight:700;
+
+    font-size:13px;
+
+    border:1px solid transparent;
+
+    transition:.25s;
+
+    cursor:pointer;
+}
+
+
+.btn-primary{
+
+    background:var(--gold);
+
+    color:#101c2b;
+}
+
+
+.btn-primary:hover{
+
+    transform:translateY(-3px);
+
+    filter:brightness(1.08);
+
+    box-shadow:
+        0 12px 30px rgba(199,166,106,.25);
+}
+
+
+.form-status{
+
+    min-height:20px;
+
+    font-size:13px;
+
+    margin-top:-5px;
+}
+
+
+.form-status.success{
+
+    color:#28724b;
+}
+
+
+.form-status.error{
+
+    color:#a33b3b;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    background:#041326;
+
+    color:#aebdca;
+
+    padding:
+        55px
+        max(24px,calc((100% - var(--max))/2));
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr 1fr;
+
+    gap:25px;
+
+    align-items:center;
+}
+
+
+.footer-brand strong{
+
+    font:800 22px Manrope;
+
+    letter-spacing:2px;
+
+    color:#fff;
+}
+
+
+.footer-brand span{
+
+    display:block;
+
+    color:var(--gold);
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    margin-top:2px;
+}
+
+
+footer p{
+
+    font-size:13px;
+}
+
+
+.footer-links{
+
+    display:flex;
+
+    gap:20px;
+
+    justify-content:flex-end;
+
+    font-size:12px;
+}
+
+
+.footer-links a:hover{
+
+    color:#fff;
+}
+
+
+footer small{
+
+    grid-column:1/-1;
+
+    border-top:
+        1px solid rgba(255,255,255,.08);
+
+    padding-top:22px;
+
+    font-size:11px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:900px){
+
+    .contact-grid{
+
+        grid-template-columns:1fr;
+
+        gap:55px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px){
+
+    .site-header{
+
+        height:70px;
+    }
+
+
+    .menu-toggle{
+
+        display:block;
+    }
+
+
+    .nav{
+
+        display:none;
+
+        position:absolute;
+
+        top:70px;
+
+        left:0;
+
+        width:100%;
+
+        background:var(--navy);
+
+        padding:22px 24px;
+
+        flex-direction:column;
+
+        gap:18px;
+    }
+
+
+    .nav.show{
+
+        display:flex;
+    }
+
+
+    .nav a.active:after{
+
+        display:none;
+    }
+
+
+    .page-hero{
+
+        min-height:500px;
+
+        padding-top:135px;
+    }
+
+
+    .page-hero h1{
+
+        letter-spacing:-2px;
+    }
+
+
+    .contact-form{
+
+        grid-template-columns:1fr;
+
+        padding:28px 22px;
+    }
+
+
+    .contact-form label:nth-of-type(5),
+    .contact-form label:nth-of-type(6),
+    .contact-form button,
+    .form-status{
+
+        grid-column:1;
+    }
+
+
+    footer{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .footer-links{
+
+        justify-content:flex-start;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:480px){
+
+    .section{
+
+        padding-top:75px;
+
+        padding-bottom:75px;
+    }
+
+
+    .page-hero{
+
+        padding-left:20px;
+
+        padding-right:20px;
+    }
+
+
+    .page-hero h1{
+
+        font-size:46px;
+    }
+
+
+    .brand{
+
+        font-size:16px;
+    }
+
+
+    .brand-mark{
+
+        width:34px;
+
+        height:34px;
+    }
+
+
+    .contact-form{
+
+        padding:24px 18px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
 <body>
-<header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">B</span><span>BLUNORT<small>GLOBAL IMPORT & EXPORT</small></span></a><button class="menu-toggle" aria-label="Open menu">☰</button><nav class="nav"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products & Services</a><a class="active" href="contact.html">Contact Us</a></nav></header>
+
+
+<header class="site-header">
+
+    <a class="brand" href="index.html">
+
+        <span class="brand-mark">B</span>
+
+        <span>
+            BLUNORT
+            <small>GLOBAL IMPORT & EXPORT</small>
+        </span>
+
+    </a>
+
+
+    <button
+        class="menu-toggle"
+        aria-label="Open menu"
+        type="button">
+
+        ☰
+
+    </button>
+
+
+    <nav class="nav">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About Us
+        </a>
+
+        <a href="products.html">
+            Products & Services
+        </a>
+
+        <a class="active" href="contact.html">
+            Contact Us
+        </a>
+
+    </nav>
+
+</header>
+
+
 <main>
-<section class="page-hero"><span class="eyebrow">CONTACT US</span><h1>Start a trade inquiry.</h1><p>Tell us about your product, market or sourcing requirement and our team can review the opportunity.</p></section>
-<section class="section contact-grid">
-<div><span class="eyebrow">GET IN TOUCH</span><h2>Let's connect markets.</h2><div class="contact-list"><div><b>Email</b><a href="mailto:info@blunort.com">info@blunort.com</a></div><div><b>WhatsApp</b><a href="https://wa.me/5500000000000">+55 (XX) XXXXX-XXXX</a></div><div><b>Location</b><span>Brazil</span></div></div><p class="placeholder">Contact details shown above are placeholders and can be replaced with the client's final information.</p></div>
-<form id="inquiryForm" class="contact-form"><label>Name<input name="name" required placeholder="Your name"></label><label>Company<input name="company" placeholder="Company name"></label><label>Email<input type="email" name="email" required placeholder="you@company.com"></label><label>Country<input name="country" placeholder="Country"></label><label>Product / Requirement<input name="product" placeholder="What are you looking for?"></label><label>Message<textarea name="message" rows="5" required placeholder="Tell us about your requirement..."></textarea></label><button class="btn btn-primary" type="submit">Submit Trade Inquiry</button><p id="formStatus" class="form-status"></p></form>
+
+
+<!-- CONTACT HERO -->
+
+<section class="page-hero">
+
+    <div class="page-hero-content">
+
+        <span class="eyebrow">
+            CONTACT US
+        </span>
+
+        <h1>
+            Start a trade inquiry.
+        </h1>
+
+        <p>
+            Tell us about your product, market or sourcing requirement and our team can review the opportunity.
+        </p>
+
+    </div>
+
 </section>
+
+
+<!-- CONTACT -->
+
+<section class="section contact-grid">
+
+
+    <!-- LEFT -->
+
+    <div>
+
+        <span class="eyebrow">
+            GET IN TOUCH
+        </span>
+
+        <h2>
+            Let's connect markets.
+        </h2>
+
+
+        <div class="contact-list">
+
+
+            <div>
+
+                <b>Email</b>
+
+                <a href="mailto:info@blunort.com">
+                    info@blunort.com
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <b>WhatsApp</b>
+
+                <a href="https://wa.me/5500000000000">
+                    +55 (XX) XXXXX-XXXX
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <b>Location</b>
+
+                <span>
+                    Brazil
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+        <p class="placeholder">
+
+            Contact details shown above are placeholders and can be replaced with the client's final information.
+
+        </p>
+
+    </div>
+
+
+    <!-- RIGHT FORM -->
+
+    <form
+        id="inquiryForm"
+        class="contact-form">
+
+
+        <label>
+
+            Name
+
+            <input
+                name="name"
+                required
+                placeholder="Your name">
+
+        </label>
+
+
+        <label>
+
+            Company
+
+            <input
+                name="company"
+                placeholder="Company name">
+
+        </label>
+
+
+        <label>
+
+            Email
+
+            <input
+                type="email"
+                name="email"
+                required
+                placeholder="you@company.com">
+
+        </label>
+
+
+        <label>
+
+            Country
+
+            <input
+                name="country"
+                placeholder="Country">
+
+        </label>
+
+
+        <label>
+
+            Product / Requirement
+
+            <input
+                name="product"
+                placeholder="What are you looking for?">
+
+        </label>
+
+
+        <label>
+
+            Message
+
+            <textarea
+                name="message"
+                rows="5"
+                required
+                placeholder="Tell us about your requirement..."></textarea>
+
+        </label>
+
+
+        <button
+            class="btn btn-primary"
+            type="submit">
+
+            Submit Trade Inquiry
+
+        </button>
+
+
+        <p
+            id="formStatus"
+            class="form-status">
+        </p>
+
+
+    </form>
+
+
+</section>
+
+
 </main>
-<footer><div class="footer-brand"><strong>BLUNORT</strong><span>GLOBAL IMPORT & EXPORT</span></div><p>Brazilian products. Global markets. International solutions.</p><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Products</a></div><small>© 2026 BLUNORT. All rights reserved.</small></footer><script src="script.js"></script></body></html>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+
+    <div class="footer-brand">
+
+        <strong>
+            BLUNORT
+        </strong>
+
+        <span>
+            GLOBAL IMPORT & EXPORT
+        </span>
+
+    </div>
+
+
+    <p>
+        Brazilian products. Global markets. International solutions.
+    </p>
+
+
+    <div class="footer-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="products.html">
+            Products
+        </a>
+
+    </div>
+
+
+    <small>
+        © 2026 BLUNORT. All rights reserved.
+    </small>
+
+
+</footer>
+
+
+<script>
+
+const menuToggle =
+    document.querySelector(".menu-toggle");
+
+const nav =
+    document.querySelector(".nav");
+
+const header =
+    document.querySelector(".site-header");
+
+
+menuToggle.addEventListener("click", function(){
+
+    nav.classList.toggle("show");
+
+});
+
+
+window.addEventListener("scroll", function(){
+
+    if(window.scrollY > 20){
+
+        header.classList.add("scrolled");
+
+    }else{
+
+        header.classList.remove("scrolled");
+
+    }
+
+});
+
+
+const form =
+    document.getElementById("inquiryForm");
+
+const status =
+    document.getElementById("formStatus");
+
+
+form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    status.textContent =
+        "Thank you. Your inquiry has been received.";
+
+    status.className =
+        "form-status success";
+
+    form.reset();
+
+});
+
+</script>
+
+
+</body>
+</html>

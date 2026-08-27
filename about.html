@@ -1,12 +1,1242 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="About BLUNORT, a Brazilian international trading company."><title>About Us | BLUNORT</title><link rel="stylesheet" href="style.css"></head>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="About BLUNORT, a Brazilian international trading company.">
+
+    <title>About Us | BLUNORT</title>
+
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+
+        :root {
+            --navy: #071a35;
+            --navy2: #0c2b50;
+            --ink: #102238;
+            --muted: #65758a;
+            --line: #dfe6ed;
+            --gold: #c7a66a;
+            --white: #ffffff;
+            --soft: #f5f8fb;
+            --max: 1180px;
+        }
+
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            color: var(--ink);
+            background: #ffffff;
+            line-height: 1.65;
+        }
+
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .site-header {
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 82px;
+
+            padding: 0 max(24px, calc((100% - var(--max)) / 2));
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            color: #ffffff;
+
+            background: rgba(7, 26, 53, 0.30);
+
+            backdrop-filter: blur(8px);
+
+            transition: 0.3s ease;
+        }
+
+
+        .site-header.scrolled {
+            background: rgba(7, 26, 53, 0.97);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+        }
+
+
+        .brand {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+
+            font-family: Manrope;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            font-size: 19px;
+        }
+
+
+        .brand small {
+            display: block;
+
+            font: 500 8px "DM Sans";
+
+            letter-spacing: 2px;
+
+            opacity: 0.7;
+
+            margin-top: -2px;
+        }
+
+
+        .brand-mark {
+            width: 40px;
+            height: 40px;
+
+            border: 1px solid rgba(255,255,255,0.35);
+
+            display: grid;
+            place-items: center;
+
+            color: var(--gold);
+
+            font-size: 21px;
+
+            background: rgba(255,255,255,0.04);
+        }
+
+
+        .nav {
+            display: flex;
+            gap: 30px;
+
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+
+        .nav a {
+            opacity: 0.78;
+
+            position: relative;
+
+            transition: 0.25s;
+        }
+
+
+        .nav a:hover,
+        .nav a.active {
+            opacity: 1;
+        }
+
+
+        .nav a.active::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            right: 0;
+
+            bottom: -10px;
+
+            height: 2px;
+
+            background: var(--gold);
+        }
+
+
+        .menu-toggle {
+            display: none;
+
+            background: none;
+
+            border: 0;
+
+            color: #ffffff;
+
+            font-size: 27px;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           ABOUT HERO
+        ========================= */
+
+        .page-hero {
+
+            min-height: 590px;
+
+            padding:
+                170px
+                max(24px, calc((100% - var(--max)) / 2))
+                100px;
+
+            display: flex;
+
+            align-items: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+            color: #ffffff;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(7, 26, 53, 0.95) 0%,
+                    rgba(7, 26, 53, 0.78) 45%,
+                    rgba(7, 26, 53, 0.38) 100%
+                ),
+                url("about.avif")
+                center / cover
+                no-repeat;
+        }
+
+
+        .page-hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 520px;
+            height: 520px;
+
+            border: 1px solid rgba(255,255,255,0.10);
+
+            border-radius: 50%;
+
+            right: -160px;
+
+            top: 80px;
+
+            box-shadow:
+                0 0 0 80px rgba(255,255,255,0.025),
+                0 0 0 160px rgba(255,255,255,0.015);
+        }
+
+
+        .page-hero-content {
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 800px;
+        }
+
+
+        .eyebrow {
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+
+            font-weight: 700;
+
+            color: var(--gold);
+
+            display: block;
+
+            margin-bottom: 16px;
+        }
+
+
+        .page-hero h1 {
+
+            font-family: Manrope;
+
+            font-size: clamp(48px, 7vw, 82px);
+
+            line-height: 1.05;
+
+            letter-spacing: -3px;
+
+            max-width: 800px;
+        }
+
+
+        .page-hero p {
+
+            max-width: 650px;
+
+            color: #d5e1eb;
+
+            font-size: 18px;
+
+            margin-top: 25px;
+        }
+
+
+        /* =========================
+           ABOUT COMPANY
+        ========================= */
+
+        .section {
+
+            max-width: var(--max);
+
+            margin: auto;
+
+            padding: 105px 24px;
+        }
+
+
+        .about-company {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 75px;
+
+            align-items: center;
+        }
+
+
+        /* LEFT TEXT */
+
+        .about-company-text {
+
+            grid-column: 1;
+
+            grid-row: 1;
+        }
+
+
+        .about-company-text h2 {
+
+            font-family: Manrope;
+
+            font-size: clamp(36px, 4vw, 55px);
+
+            line-height: 1.08;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 28px;
+        }
+
+
+        .about-company-text p {
+
+            color: var(--muted);
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            margin-bottom: 18px;
+
+            max-width: 540px;
+        }
+
+
+        /* RIGHT IMAGE */
+
+        .about-company-image {
+
+            grid-column: 2;
+
+            grid-row: 1;
+
+            position: relative;
+
+            width: 100%;
+
+            min-height: 450px;
+
+            overflow: hidden;
+
+            border-radius: 4px;
+
+            box-shadow: 0 25px 70px rgba(7,26,53,0.18);
+        }
+
+
+        .about-company-image::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(7,26,53,0.10),
+                    transparent 55%
+                );
+
+            pointer-events: none;
+        }
+
+
+        .about-company-image img {
+
+            width: 100%;
+
+            height: 450px;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: transform 0.6s ease;
+        }
+
+
+        .about-company-image:hover img {
+
+            transform: scale(1.04);
+        }
+
+
+        /* =========================
+           WHY BLUNORT
+        ========================= */
+
+        .dark {
+
+            max-width: none;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #071a35,
+                    #0c2b50
+                );
+
+            color: #ffffff;
+
+            padding-left:
+                max(24px, calc((100% - var(--max)) / 2));
+
+            padding-right:
+                max(24px, calc((100% - var(--max)) / 2));
+        }
+
+
+        .section-head {
+
+            margin-bottom: 45px;
+        }
+
+
+        .section-head h2 {
+
+            font-family: Manrope;
+
+            font-size: clamp(36px, 4vw, 53px);
+
+            line-height: 1.08;
+
+            letter-spacing: -2px;
+        }
+
+
+        .feature-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+        }
+
+
+        .feature-grid article {
+
+            border: 1px solid rgba(255,255,255,0.10);
+
+            padding: 32px;
+
+            min-height: 250px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.045),
+                    rgba(255,255,255,0.01)
+                );
+
+            transition: 0.3s ease;
+        }
+
+
+        .feature-grid article:hover {
+
+            transform: translateY(-7px);
+
+            border-color:
+                rgba(199,166,106,0.45);
+
+            background:
+                rgba(255,255,255,0.07);
+        }
+
+
+        .feature-grid b {
+
+            color: var(--gold);
+
+            font-size: 12px;
+
+            letter-spacing: 1px;
+        }
+
+
+        .feature-grid h3 {
+
+            font: 700 21px Manrope;
+
+            margin: 18px 0 12px;
+        }
+
+
+        .feature-grid p {
+
+            color: #adbfce;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+
+            max-width: none;
+
+            background: var(--soft);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 40px;
+
+            padding-left:
+                max(24px, calc((100% - var(--max)) / 2));
+
+            padding-right:
+                max(24px, calc((100% - var(--max)) / 2));
+        }
+
+
+        .cta h2 {
+
+            font-family: Manrope;
+
+            font-size: clamp(30px, 4vw, 48px);
+
+            line-height: 1.1;
+
+            letter-spacing: -1.5px;
+        }
+
+
+        .btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 15px 24px;
+
+            border-radius: 2px;
+
+            font-weight: 700;
+
+            font-size: 13px;
+
+            border: 1px solid transparent;
+
+            transition: 0.25s;
+
+            cursor: pointer;
+
+            white-space: nowrap;
+        }
+
+
+        .btn-primary {
+
+            background: var(--gold);
+
+            color: #101c2b;
+        }
+
+
+        .btn-primary:hover {
+
+            transform: translateY(-3px);
+
+            filter: brightness(1.08);
+
+            box-shadow:
+                0 10px 25px rgba(199,166,106,0.25);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            background: #041326;
+
+            color: #aebdca;
+
+            padding:
+                55px
+                max(24px, calc((100% - var(--max)) / 2));
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr 1fr;
+
+            gap: 25px;
+
+            align-items: center;
+        }
+
+
+        .footer-brand strong {
+
+            font: 800 22px Manrope;
+
+            letter-spacing: 2px;
+
+            color: #ffffff;
+        }
+
+
+        .footer-brand span {
+
+            display: block;
+
+            color: var(--gold);
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+            margin-top: 2px;
+        }
+
+
+        footer p {
+
+            font-size: 13px;
+        }
+
+
+        .footer-links {
+
+            display: flex;
+
+            gap: 20px;
+
+            justify-content: flex-end;
+
+            font-size: 12px;
+        }
+
+
+        .footer-links a:hover {
+
+            color: #ffffff;
+        }
+
+
+        footer small {
+
+            grid-column: 1 / -1;
+
+            border-top:
+                1px solid rgba(255,255,255,0.08);
+
+            padding-top: 22px;
+
+            font-size: 11px;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .feature-grid {
+
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+
+            .about-company {
+
+                gap: 45px;
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .site-header {
+
+                height: 70px;
+            }
+
+
+            .menu-toggle {
+
+                display: block;
+            }
+
+
+            .nav {
+
+                display: none;
+
+                position: absolute;
+
+                top: 70px;
+
+                left: 0;
+
+                width: 100%;
+
+                background: var(--navy);
+
+                padding: 22px 24px;
+
+                flex-direction: column;
+
+                gap: 18px;
+            }
+
+
+            .nav.show {
+
+                display: flex;
+            }
+
+
+            .nav a.active::after {
+
+                display: none;
+            }
+
+
+            .page-hero {
+
+                min-height: 540px;
+
+                padding-top: 135px;
+            }
+
+
+            .page-hero h1 {
+
+                letter-spacing: -2px;
+            }
+
+
+            .about-company {
+
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+            }
+
+
+            .about-company-text {
+
+                grid-column: 1;
+
+                grid-row: 1;
+            }
+
+
+            .about-company-image {
+
+                grid-column: 1;
+
+                grid-row: 2;
+
+                min-height: 350px;
+            }
+
+
+            .about-company-image img {
+
+                height: 350px;
+            }
+
+
+            .cta {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+
+            footer {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .footer-links {
+
+                justify-content: flex-start;
+            }
+
+        }
+
+
+        /* =========================
+           SMALL MOBILE
+        ========================= */
+
+        @media (max-width: 480px) {
+
+            .section {
+
+                padding-top: 75px;
+
+                padding-bottom: 75px;
+            }
+
+
+            .page-hero {
+
+                min-height: 500px;
+
+                padding-left: 20px;
+
+                padding-right: 20px;
+            }
+
+
+            .page-hero h1 {
+
+                font-size: 46px;
+            }
+
+
+            .about-company-image {
+
+                min-height: 270px;
+            }
+
+
+            .about-company-image img {
+
+                height: 270px;
+            }
+
+
+            .feature-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .feature-grid article {
+
+                min-height: auto;
+            }
+
+
+            .brand {
+
+                font-size: 16px;
+            }
+
+
+            .brand-mark {
+
+                width: 34px;
+
+                height: 34px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
 <body>
-<header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">B</span><span>BLUNORT<small>GLOBAL IMPORT & EXPORT</small></span></a><button class="menu-toggle" aria-label="Open menu">☰</button><nav class="nav"><a href="index.html">Home</a><a class="active" href="about.html">About Us</a><a href="products.html">Products & Services</a><a href="contact.html">Contact Us</a></nav></header>
+
+
+<header class="site-header">
+
+    <a class="brand" href="index.html">
+
+        <span class="brand-mark">B</span>
+
+        <span>
+            BLUNORT
+            <small>GLOBAL IMPORT & EXPORT</small>
+        </span>
+
+    </a>
+
+
+    <button
+        class="menu-toggle"
+        aria-label="Open menu"
+        type="button">
+        ☰
+    </button>
+
+
+    <nav class="nav">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a class="active" href="about.html">
+            About Us
+        </a>
+
+        <a href="products.html">
+            Products & Services
+        </a>
+
+        <a href="contact.html">
+            Contact Us
+        </a>
+
+    </nav>
+
+</header>
+
+
 <main>
-<section class="page-hero"><span class="eyebrow">ABOUT BLUNORT</span><h1>Built for international trade.</h1><p>Connecting Brazil and global markets through reliable sourcing, structured transactions and international relationships.</p></section>
-<section class="section two-col"><div><span class="eyebrow">OUR COMPANY</span><h2>Brazilian origin. Global perspective.</h2></div><div><p>BLUNORT is a Brazilian international trading company specialized in export, import, commodities, energy, logistics and international trade solutions.</p><p>Our network enables us to connect qualified producers and suppliers with international buyers while also structuring transactions between different countries and markets.</p></div></section>
-<section class="section dark"><div class="section-head"><span class="eyebrow">WHY BLUNORT</span><h2>Trade with clarity and purpose.</h2></div><div class="feature-grid"><article><b>01</b><h3>Global Network</h3><p>Access to sourcing and commercial opportunities across Asia, Europe, Middle East, Americas and Africa.</p></article><article><b>02</b><h3>Verified Opportunities</h3><p>Product availability, specifications, quantities and origin are reviewed individually for each transaction.</p></article><article><b>03</b><h3>Market Focus</h3><p>Particular attention to Asian markets while maintaining a broad global trading perspective.</p></article><article><b>04</b><h3>Structured Solutions</h3><p>We coordinate the commercial requirements of each transaction around the needs of the market.</p></article></div></section>
-<section class="cta section"><div><span class="eyebrow">CONNECT WITH US</span><h2>Let's build the right trade opportunity.</h2></div><a class="btn btn-primary" href="contact.html">Contact BLUNORT</a></section>
+
+
+    <!-- ABOUT HERO -->
+
+    <section class="page-hero">
+
+        <div class="page-hero-content">
+
+            <span class="eyebrow">
+                ABOUT BLUNORT
+            </span>
+
+            <h1>
+                Built for international trade.
+            </h1>
+
+            <p>
+                Connecting Brazil and global markets through reliable sourcing, structured transactions and international relationships.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- OUR COMPANY -->
+
+    <section class="section about-company">
+
+
+        <!-- LEFT -->
+
+        <div class="about-company-text">
+
+            <span class="eyebrow">
+                OUR COMPANY
+            </span>
+
+
+            <h2>
+                Brazilian origin. Global perspective.
+            </h2>
+
+
+            <p>
+                BLUNORT is a Brazilian international trading company specialized in export, import, commodities, energy, logistics and international trade solutions.
+            </p>
+
+
+            <p>
+                Our network enables us to connect qualified producers and suppliers with international buyers while also structuring transactions between different countries and markets.
+            </p>
+
+        </div>
+
+
+        <!-- RIGHT -->
+
+        <div class="about-company-image">
+
+            <img
+                src="copper.jpg"
+                alt="BLUNORT international trade and Brazilian commodities">
+
+        </div>
+
+
+    </section>
+
+
+    <!-- WHY BLUNORT -->
+
+    <section class="section dark">
+
+        <div class="section-head">
+
+            <span class="eyebrow">
+                WHY BLUNORT
+            </span>
+
+            <h2>
+                Trade with clarity and purpose.
+            </h2>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+
+            <article>
+
+                <b>01</b>
+
+                <h3>
+                    Global Network
+                </h3>
+
+                <p>
+                    Access to sourcing and commercial opportunities across Asia, Europe, Middle East, Americas and Africa.
+                </p>
+
+            </article>
+
+
+            <article>
+
+                <b>02</b>
+
+                <h3>
+                    Verified Opportunities
+                </h3>
+
+                <p>
+                    Product availability, specifications, quantities and origin are reviewed individually for each transaction.
+                </p>
+
+            </article>
+
+
+            <article>
+
+                <b>03</b>
+
+                <h3>
+                    Market Focus
+                </h3>
+
+                <p>
+                    Particular attention to Asian markets while maintaining a broad global trading perspective.
+                </p>
+
+            </article>
+
+
+            <article>
+
+                <b>04</b>
+
+                <h3>
+                    Structured Solutions
+                </h3>
+
+                <p>
+                    We coordinate the commercial requirements of each transaction around the needs of the market.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta section">
+
+        <div>
+
+            <span class="eyebrow">
+                CONNECT WITH US
+            </span>
+
+            <h2>
+                Let's build the right trade opportunity.
+            </h2>
+
+        </div>
+
+
+        <a
+            class="btn btn-primary"
+            href="contact.html">
+
+            Contact BLUNORT
+
+        </a>
+
+    </section>
+
+
 </main>
-<footer><div class="footer-brand"><strong>BLUNORT</strong><span>GLOBAL IMPORT & EXPORT</span></div><p>Brazilian products. Global markets. International solutions.</p><div class="footer-links"><a href="index.html">Home</a><a href="products.html">Products</a><a href="contact.html">Contact</a></div><small>© 2026 BLUNORT. All rights reserved.</small></footer><script src="script.js"></script></body></html>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+
+    <div class="footer-brand">
+
+        <strong>
+            BLUNORT
+        </strong>
+
+        <span>
+            GLOBAL IMPORT & EXPORT
+        </span>
+
+    </div>
+
+
+    <p>
+        Brazilian products. Global markets. International solutions.
+    </p>
+
+
+    <div class="footer-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="products.html">
+            Products
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </div>
+
+
+    <small>
+        © 2026 BLUNORT. All rights reserved.
+    </small>
+
+
+</footer>
+
+
+<script>
+
+    const menuToggle =
+        document.querySelector(".menu-toggle");
+
+    const nav =
+        document.querySelector(".nav");
+
+    const header =
+        document.querySelector(".site-header");
+
+
+    menuToggle.addEventListener("click", function () {
+
+        nav.classList.toggle("show");
+
+    });
+
+
+    window.addEventListener("scroll", function () {
+
+        if (window.scrollY > 20) {
+
+            header.classList.add("scrolled");
+
+        } else {
+
+            header.classList.remove("scrolled");
+
+        }
+
+    });
+
+</script>
+
+
+</body>
+</html>
