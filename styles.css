@@ -141,7 +141,7 @@ a {
             rgba(7, 26, 53, 0.82) 42%,
             rgba(7, 26, 53, 0.35) 100%
         ),
-        url("hero-image.jpg") center / cover no-repeat;
+        url("hero.webp") center / cover no-repeat;
     color: #fff;
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
